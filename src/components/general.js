@@ -13,7 +13,7 @@ export const Main = styled.main`
   font-family: -apple-system, Roboto, sans-serif, serif;
   padding-top: ${scale(12)};
   padding-bottom: ${scale(12)};
-  min-width: 100vw;
+  min-width: calc(100vw - 12px);
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
