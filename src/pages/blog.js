@@ -15,7 +15,7 @@ const BlogPage = ({ data }) => {
     blogPosts.forEach((post) => {
       tags = tags.concat(post.tags);
     });
-    return tags;
+    return Array.from(new Set(tags));
   };
 
   const shownPosts = blogPosts.length < 10 ? blogPosts : blogPosts.slice(0, 10);
