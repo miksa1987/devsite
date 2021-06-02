@@ -6,18 +6,17 @@ import { texts } from "../config";
 import { Page, Title, SubTitle, SubSubTitle } from "../components/general";
 import { Post, Tag, TagsContainer } from "../components/post";
 
+export const getTags = (blogPosts) => {
+  let tags = [];
+
+  blogPosts.forEach((post) => {
+    tags = tags.concat(post.tags);
+  });
+  return Array.from(new Set(tags));
+};
+
 const BlogPage = ({ data }) => {
   const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node);
-
-  const getTags = () => {
-    let tags = [];
-
-    blogPosts.forEach((post) => {
-      tags = tags.concat(post.tags);
-    });
-    return Array.from(new Set(tags));
-  };
-
   const shownPosts = blogPosts.length < 10 ? blogPosts : blogPosts.slice(0, 10);
 
   return (
@@ -27,7 +26,7 @@ const BlogPage = ({ data }) => {
       <Title>{texts.blog.title}</Title>
       <SubSubTitle>{texts.blog.searchDescription}</SubSubTitle>
       <TagsContainer>
-        {getTags().map((tag, index) => (
+        {getTags(blogPosts).map((tag, index) => (
           <Tag key={index} tag={tag} />
         ))}
       </TagsContainer>
