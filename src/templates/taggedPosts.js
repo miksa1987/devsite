@@ -8,7 +8,6 @@ import { Post, Tag, TagsContainer } from "../components/post";
 
 const BlogPage = ({ data, pageContext: { tag } }) => {
   const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node);
-  console.log(tag);
 
   const getTags = () => {
     let tags = [];

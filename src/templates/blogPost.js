@@ -31,7 +31,6 @@ const textContentTypes = [
 
 const parseBlogContent = (content, assets) =>
   content.map((chunk, index) => {
-    console.log(chunk);
     const chunkTextContent = textContentTypes.includes(chunk.nodeType)
       ? chunk.content[0].value
       : "";
@@ -125,7 +124,6 @@ const BlogPostPage = ({ data }) => {
     src: edge.node.file.url,
     alt: edge.node.title,
   }));
-  console.log(assets);
 
   return (
     <Page>
