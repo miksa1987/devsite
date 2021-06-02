@@ -2,6 +2,11 @@ export const texts = {
   common: {
     backToHome: "Back to home",
   },
+  notFound: {
+    title: "Four-o-four",
+    description: "That means the page doesn't exist",
+    emoji: "🚫",
+  },
   index: {
     hi: "Hi, I'm",
     hiEmoji: "👋",
