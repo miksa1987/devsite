@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { Link as UnstyledLink } from "gatsby";
 
-import { Link, Body, Column, Row, scale } from "./general";
+import { Link, Body, Column, Row, scale, MOBILE_BREAKPOINT } from "./general";
 
 const TagLink = styled(UnstyledLink)`
   color: black;
@@ -30,6 +30,14 @@ const PostContainer = styled.div`
 const SpaceBetween = styled(Row)`
   justify-content: space-between;
   align-items: center;
+
+  ${TitleLink} {
+    word-wrap: break-word;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+  }
 `;
 
 export const Tag = ({ tag }) => (
