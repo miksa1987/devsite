@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: ".env",
+});
+
 module.exports = {
   siteMetadata: {
     title: "DevSite",
@@ -6,8 +10,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "FKNtvRqFKpSM-4XxjK1tEz1W6Fc47d9fyQfZPAk2b-o",
-        spaceId: "u8kk0rkv977x",
+        accessToken: process.env.CONTENTFUL_ACCESSTOKEN,
+        spaceId: process.env.CONTENTFUL_SPACEID,
       },
     },
     "gatsby-plugin-styled-components",
