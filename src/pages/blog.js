@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
 import Navigation from "../components/Navigation";
+import { texts } from "../config";
 
 import { Page, Title, SubTitle, SubSubTitle } from "../components/general";
 import { Post, Tag, TagsContainer } from "../components/post";
@@ -22,15 +23,15 @@ const BlogPage = ({ data }) => {
   return (
     <Page>
       <Navigation />
-      <Link to="/">Back to home</Link>
-      <Title>Blog</Title>
-      <SubSubTitle>You can search posts by tag:</SubSubTitle>
+      <Link to="/">{texts.common.backToHome}</Link>
+      <Title>{texts.blog.title}</Title>
+      <SubSubTitle>{texts.blog.searchDescription}</SubSubTitle>
       <TagsContainer>
         {getTags().map((tag, index) => (
           <Tag key={index} tag={tag} />
         ))}
       </TagsContainer>
-      <SubTitle>Latest posts</SubTitle>
+      <SubTitle>{texts.blog.latest}</SubTitle>
       {shownPosts.map((post, index) => (
         <Post key={index} post={post} />
       ))}

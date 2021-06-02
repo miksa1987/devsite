@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 import Navigation from "../components/Navigation";
+import { texts } from "../config";
 
 import {
   Page,
@@ -37,8 +38,10 @@ const ProjectCard = ({ project }) => (
     <SpaceBetweenResponsiveRow>
       <SubTitle compact>{project.title}</SubTitle>
       <Row>
-        {project.sourceUrl && <Link to={project.sourceUrl}>[ source ]</Link>}
-        {project.url && <Link to={project.url}>[ live ]</Link>}
+        {project.sourceUrl && (
+          <Link to={project.sourceUrl}>{texts.work.sourceUrl}</Link>
+        )}
+        {project.url && <Link to={project.url}>{texts.work.projectUrl}</Link>}
       </Row>
     </SpaceBetweenResponsiveRow>
     <Body compact>{project.description}</Body>
@@ -58,8 +61,8 @@ const WorkPage = ({ data }) => {
   return (
     <Page>
       <Navigation />
-      <Link to="/">Back to home</Link>
-      <Title>Work</Title>
+      <Link to="/">{texts.common.backToHome}</Link>
+      <Title>{texts.work.title}</Title>
       {projects?.length > 0 &&
         projects.map((project, index) => (
           <ProjectCard key={index} project={project} />

@@ -2,12 +2,11 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 import Navigation from "../components/Navigation";
+import { texts } from "../config";
 
 import {
   Page,
   Image,
-  List,
-  ListItem,
   Title,
   SubTitle,
   SubSubTitle,
@@ -113,7 +112,6 @@ const parseBlogContent = (content, assets) =>
         return null;
 
       default:
-        console.log("unknown nodeType", chunk.nodeType);
         return null;
     }
   });
@@ -132,7 +130,7 @@ const BlogPostPage = ({ data }) => {
   return (
     <Page>
       <Navigation />
-      <Link to="/">Back to home</Link>
+      <Link to="/">{texts.common.backToHome}</Link>
       <Title>{title}</Title>
       {parseBlogContent(content, assets)}
     </Page>

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Navigation from "../components/Navigation";
+import { texts } from "../config";
 
 import {
   Page,
@@ -26,9 +27,11 @@ const IndexPage = ({ data }) => {
     <Page>
       <Navigation />
       <AvatarImage src={avatar} alt="Avatar" marginTop={scale(12)} />
-      <Title>Hi, I'm {displayName} 👋</Title>
+      <Title>
+        {texts.index.hi} {displayName} {texts.index.hiEmoji}
+      </Title>
       <Body>{descriptionTitle}</Body>
-      <Body>Like for example...</Body>
+      <Body>{texts.index.like}</Body>
       <List>
         {skills.map((skill) => (
           <ListItem key={skill}>

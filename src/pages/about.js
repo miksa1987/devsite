@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
 import Navigation from "../components/Navigation";
+import { texts } from "../config";
 
 import { Page, Title, Body, scale } from "../components/general";
 
@@ -15,8 +16,8 @@ const AboutPage = ({ data }) => {
   return (
     <Page>
       <Navigation />
-      <Link to="/">Back to home</Link>
-      <Title>About me</Title>
+      <Link to="/">{texts.common.backToHome}</Link>
+      <Title>{texts.about.title}</Title>
       {getParagraphs().map((paragraph, index) => (
         <Body key={index}>{paragraph}</Body>
       ))}
