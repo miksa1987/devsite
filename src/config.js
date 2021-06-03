@@ -30,3 +30,18 @@ export const texts = {
     withTag: "Posts with tag",
   },
 };
+
+export const navigationLinks = {
+  about: {
+    title: "About",
+    path: "/about",
+  },
+  work: {
+    title: "Work",
+    path: "/work",
+  },
+  blog: {
+    title: "Blog",
+    path: "/blog",
+  },
+};
