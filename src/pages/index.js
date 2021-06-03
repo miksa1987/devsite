@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Navigation from "../components/Navigation";
+import Contact from "../components/Contact";
 import { texts } from "../config";
 
 import {
@@ -18,10 +19,17 @@ const IndexPage = ({ data }) => {
     displayName,
     descriptionTitle,
     skills,
+    email,
+    github,
+    twitter,
+    linkedIn,
+    facebook,
     avatar: {
       file: { url: avatar },
     },
   } = data.contentfulPerson;
+
+  const contactData = { email, github, twitter, linkedIn, facebook };
 
   return (
     <Page>
@@ -39,6 +47,7 @@ const IndexPage = ({ data }) => {
           </ListItem>
         ))}
       </List>
+      <Contact {...contactData} />
     </Page>
   );
 };
@@ -51,6 +60,11 @@ export const query = graphql`
       displayName
       descriptionTitle
       skills
+      linkedIn
+      facebook
+      email
+      twitter
+      github
       avatar {
         file {
           url
