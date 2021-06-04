@@ -31,6 +31,12 @@ export const Image = styled.img`
   margin-top: ${(props) => props.marginTop ?? scale(1)};
 `;
 
+export const FullWidth = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+`;
+
 export const AvatarImage = ({ src, alt, marginTop }) => (
   <Image
     src={src}
