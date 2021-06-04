@@ -5,15 +5,7 @@ import { texts } from "../config";
 
 import { Page, Title, SubTitle, SubSubTitle } from "../components/general";
 import { Post, Tag, TagsContainer } from "../components/post";
-
-export const getTags = (blogPosts) => {
-  let tags = [];
-
-  blogPosts.forEach((post) => {
-    tags = tags.concat(post.tags);
-  });
-  return Array.from(new Set(tags));
-};
+import { getTags } from "../util/parser";
 
 const BlogPage = ({ data }) => {
   const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node);

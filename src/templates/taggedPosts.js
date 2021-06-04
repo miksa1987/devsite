@@ -5,7 +5,7 @@ import { texts } from "../config";
 
 import { Page, Title, SubTitle, SubSubTitle } from "../components/general";
 import { Post, Tag, TagsContainer } from "../components/post";
-import { getTags } from "../pages/blog";
+import { getTags } from "../util/parser";
 
 const BlogPage = ({ data, pageContext: { tag } }) => {
   const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node);
