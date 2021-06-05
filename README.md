@@ -2,11 +2,11 @@
 
 A minimalistic site template for developers. Featuring portfolio-like features as highlighting projects and about me section, and above all, a blog, featuring search by tags.
 
-### 🚀 Quick start
+## 🚀 Quick start
 
-##### 1. Clone this repository
+#### 1. Clone this repository
 
-##### 2. Create a Contentful space with content types: Person, Project, BlogPost At least following fields are required.
+#### 2. Create a Contentful space with content types: Person, Project, BlogPost At least following fields are required.
 
 **BlogPost fields:**
 
@@ -41,15 +41,11 @@ Update your Person ID to queries at the bottom of src/pages/index.js and src/pag
 in here:
 `contentfulPerson(contentful_id: { eq: "your id" })`
 
-##### 3. Get your Contentful content delivery API key and space ID And place them in .env. See .env.example.
+#### 3. Get your Contentful content delivery API key and space ID And place them in .env. See .env.example.
 
-<br></br>
+#### 4. Customize UI texts in src/config.js if you like
 
-##### 4. Customize UI texts in src/config.js if you like
-
-<br></br>
-
-##### 5. Start the dev server to see what it looks like!
+#### 5. Start the dev server to see what it looks like!
 
 `Run 'gatsby develop' `
 
