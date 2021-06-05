@@ -1,9 +1,9 @@
 import * as React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Navigation from "../components/Navigation";
 import { texts } from "../config";
 
-import { Page, Title } from "../components/general";
+import { Page, Title, TextLink } from "../components/general";
 import { parseContent } from "../util/parser";
 
 const BlogPostPage = ({ data }) => {
@@ -19,7 +19,7 @@ const BlogPostPage = ({ data }) => {
   return (
     <Page>
       <Navigation />
-      <Link to="/">{texts.common.backToHome}</Link>
+      <TextLink to="/">{texts.common.backToHome}</TextLink>
       <Title>{title}</Title>
       {parseContent(content, assets)}
     </Page>
