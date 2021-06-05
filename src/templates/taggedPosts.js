@@ -1,9 +1,15 @@
 import * as React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Navigation from "../components/Navigation";
 import { texts } from "../config";
 
-import { Page, Title, SubTitle, SubSubTitle } from "../components/general";
+import {
+  Page,
+  Title,
+  SubTitle,
+  SubSubTitle,
+  TextLink,
+} from "../components/general";
 import { Post, Tag, TagsContainer } from "../components/post";
 import { getTags } from "../util/parser";
 
@@ -17,7 +23,7 @@ const BlogPage = ({ data, pageContext: { tag } }) => {
   return (
     <Page>
       <Navigation />
-      <Link to="/">{texts.common.backToHome}</Link>
+      <TextLink to="/">{texts.common.backToHome}</TextLink>
       <Title>{texts.blog.title}</Title>
       <SubSubTitle>{texts.taggedPosts.searchDescription}</SubSubTitle>
       <TagsContainer>

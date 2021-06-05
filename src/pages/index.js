@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import Navigation from "../components/Navigation";
 import Contact from "../components/Contact";
-import { texts } from "../config";
+import { texts, personId } from "../config";
 
 import {
   Page,

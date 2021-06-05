@@ -1,10 +1,10 @@
 import * as React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Navigation from "../components/Navigation";
 import { texts } from "../config";
 import { parseContent } from "../util/parser";
 
-import { Page, Title } from "../components/general";
+import { Page, Title, TextLink } from "../components/general";
 
 const AboutPage = ({ data }) => {
   const { displayName, longBio } = data.contentfulPerson;
@@ -19,7 +19,7 @@ const AboutPage = ({ data }) => {
   return (
     <Page>
       <Navigation />
-      <Link to="/">{texts.common.backToHome}</Link>
+      <TextLink to="/">{texts.common.backToHome}</TextLink>
       <Title>{texts.about.title}</Title>
       {parseContent(content, assets)}
     </Page>

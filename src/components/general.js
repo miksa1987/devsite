@@ -110,13 +110,13 @@ export const ResponsiveRow = styled.div`
 `;
 
 export const Link = styled(UnstyledLink)`
-  background: ${(props) => props.theme.light.primary};
+  background: ${(props) => props.theme.primary};
   padding: ${scale(3)};
   margin: ${scale(2)};
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${(props) => props.theme.light.textSecondary};
+  color: ${(props) => props.theme.textSecondary};
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
@@ -130,8 +130,13 @@ export const Link = styled(UnstyledLink)`
   }
 `;
 
+export const TextLink = styled(UnstyledLink)`
+  color: ${(props) => props.theme.link};
+`;
+
 const textStyle = css`
   margin: ${scale(1)};
+  color: ${(props) => props.theme.text};
 `;
 
 export const Title = styled.h1`

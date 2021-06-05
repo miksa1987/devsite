@@ -12,6 +12,7 @@ import {
   ResponsiveRow,
   Row,
   scale,
+  TextLink,
 } from "../components/general";
 
 const SpaceBetweenResponsiveRow = styled(ResponsiveRow)`
@@ -61,7 +62,7 @@ const WorkPage = ({ data }) => {
   return (
     <Page>
       <Navigation />
-      <Link to="/">{texts.common.backToHome}</Link>
+      <TextLink to="/">{texts.common.backToHome}</TextLink>
       <Title>{texts.work.title}</Title>
       {projects?.length > 0 &&
         projects.map((project, index) => (
