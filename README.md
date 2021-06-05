@@ -1,54 +1,51 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+### DevSite
+
+A minimalistic site template for developers. Featuring portfolio-like features as highlighting projects and about me section, and above all, a blog, featuring search by tags.
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+#1. Clone this repository
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+#2. Create a Contentful space with content types: Person, Project, BlogPost
+At least following fields are required.
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+    BlogPost fields:
+    Title, short text
+    Body, rich text
+    Tags, short text, list
+    Slug, short text
 
-2.  **Start developing.**
+    Person fields:
+    Avatar, media
+    Display name, short text
+    Description title, short text
+    Github, short text
+    Email, short text
+    Twitter, short text
+    Facebook, short text
+    Linkedin, short text
+    Short bio, short text
+    Skills, short text, list
+    Long bio, rich text
 
-    Navigate into your new site’s directory and start it up.
+    Project fields:
+    Title, short text
+    Role, short text
+    Description, short text
+    URL, short text
+    Source URL, short text
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+    Update your Person ID to queries at the bottom of src/pages/index.js and src/pages/about.js
+    in here: contentfulPerson(contentful_id: { eq: "your id" })
 
-3.  **Open the code and start customizing!**
+#3. Get your Contentful content delivery API key and space ID
+And place them in .env. See .env.example.
 
-    Your site is now running at http://localhost:8000!
+#4. Customize UI texts in src/config.js if you like
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+#5. Start the dev server to see what it looks like!
+Run 'gatsby develop'
 
-4.  **Learn more**
+## Contributing
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+Feel free to submit an issue or pull request!
