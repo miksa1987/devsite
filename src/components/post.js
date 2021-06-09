@@ -2,7 +2,14 @@ import * as React from "react";
 import styled from "styled-components";
 import { Link as UnstyledLink } from "gatsby";
 
-import { Link, Body, Column, Row, scale, MOBILE_BREAKPOINT } from "./general";
+import {
+  DottedContainer,
+  TitleLink,
+  SpaceBetween,
+  Body,
+  Column,
+  scale,
+} from "./general";
 
 const TagLink = styled(UnstyledLink)`
   color: black;
@@ -10,34 +17,6 @@ const TagLink = styled(UnstyledLink)`
   padding: ${scale(0.5)} ${scale(2)};
   margin: ${scale(1)};
   border: 1px solid black;
-`;
-
-const TitleLink = styled(Link)`
-  max-height: ${scale(5)};
-  margin: ${scale(2)} ${scale(1)};
-  padding: ${scale(0.5)} ${scale(3)};
-`;
-
-const PostContainer = styled.div`
-  width: 100%;
-  border-top: 1px dotted black;
-
-  &:last-child {
-    border-bottom: 1px dotted black;
-  }
-`;
-
-const SpaceBetween = styled(Row)`
-  justify-content: space-between;
-  align-items: center;
-
-  ${TitleLink} {
-    word-wrap: break-word;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    flex-direction: column;
-  }
 `;
 
 export const Tag = ({ tag }) => (
@@ -51,7 +30,7 @@ export const TagsContainer = styled.div`
 `;
 
 export const Post = ({ post }) => (
-  <PostContainer>
+  <DottedContainer>
     <Column>
       <SpaceBetween>
         <TitleLink to={`/blog/post/${post.slug}`}>{post.title}</TitleLink>
@@ -63,5 +42,5 @@ export const Post = ({ post }) => (
         ))}
       </TagsContainer>
     </Column>
-  </PostContainer>
+  </DottedContainer>
 );

@@ -20,6 +20,14 @@ export const texts = {
     latest: "Latest posts",
     searchDescription: "You can search posts by tag:",
   },
+  blogPost: {
+    commentsTitle: "Comments",
+    noComments: "No comments yet!",
+    signInDescription: "Sign in to comment.",
+    signIn: "Sign in with Google",
+    signOut: "Sign out",
+    signedInAs: "Signed in as",
+  },
   work: {
     title: "Work",
     sourceUrl: "[ source ]",
