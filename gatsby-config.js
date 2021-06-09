@@ -5,6 +5,13 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "DevSite",
+    firebaseConfig: {
+      apiKey: process.env.FIREBASE_APIKEY,
+      authDomain: process.env.FIREBASE_AUTHDOMAIN,
+      projectId: process.env.FIREBASE_PROJECTID,
+      storageBucket: process.env.FIREBASE_STORAGEBUCKET,
+      appId: process.env.FIREBASE_APPID,
+    },
   },
   plugins: [
     {
