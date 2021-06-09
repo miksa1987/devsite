@@ -19,7 +19,7 @@ const textContentTypes = [
 ];
 
 export const parseContent = (content, assets) =>
-  content.map((chunk) => {
+  content.map((chunk, index) => {
     const chunkTextContent = textContentTypes.includes(chunk.nodeType)
       ? chunk.content[0].value
       : "";
@@ -41,7 +41,7 @@ export const parseContent = (content, assets) =>
         const isUnderline = styles.includes("underline");
 
         return (
-          <FullWidth>
+          <FullWidth key={index}>
             <Body bold={isBold} italic={isItalic} underline={isUnderline}>
               {chunkTextContent}
             </Body>
@@ -50,28 +50,28 @@ export const parseContent = (content, assets) =>
 
       case "heading-1":
         return (
-          <FullWidth>
+          <FullWidth key={index}>
             <Title>{chunkTextContent}</Title>
           </FullWidth>
         );
 
       case "heading-2":
         return (
-          <FullWidth>
+          <FullWidth key={index}>
             <SubTitle>{chunkTextContent}</SubTitle>
           </FullWidth>
         );
 
       case "heading-3":
         return (
-          <FullWidth>
+          <FullWidth key={index}>
             <SubSubTitle>{chunkTextContent}</SubSubTitle>
           </FullWidth>
         );
 
       case "heading-4":
         return (
-          <FullWidth>
+          <FullWidth key={index}>
             <Body bold as="h4">
               {chunkTextContent}
             </Body>
@@ -80,7 +80,7 @@ export const parseContent = (content, assets) =>
 
       case "heading-5":
         return (
-          <FullWidth>
+          <FullWidth key={index}>
             <Body bold as="h5">
               {chunkTextContent}
             </Body>
@@ -95,7 +95,7 @@ export const parseContent = (content, assets) =>
           const asset = assets.find(
             (asset) => asset.id === chunk.data.target.sys.id
           );
-          return <Image {...asset} />;
+          return <Image key={index} {...asset} />;
         }
         return null;
 

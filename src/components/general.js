@@ -155,3 +155,51 @@ export const Body = styled.p`
   text-decoration: ${(props) => (props.underline ? "underline" : "none")};
 `;
 export const Code = styled.code``;
+
+export const DottedContainer = styled.div`
+  width: 100%;
+  border-top: 1px dotted black;
+
+  &:last-child {
+    border-bottom: 1px dotted black;
+  }
+`;
+
+export const TitleLink = styled(Link)`
+  max-height: ${scale(5)};
+  margin: ${scale(2)} ${scale(1)};
+  padding: ${scale(0.5)} ${scale(3)};
+`;
+
+export const SpaceBetween = styled(Row)`
+  justify-content: space-between;
+  align-items: center;
+
+  ${TitleLink} {
+    word-wrap: break-word;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+  }
+`;
+
+export const Input = styled.input`
+  padding: ${scale(1)};
+  margin-right: ${scale(1)};
+  border: 1px solid ${(props) => props.theme.primary};
+`;
+
+export const Form = styled.form`
+  width: 100%;
+  display: grid;
+  grid-template: ${scale(5)} / 1fr ${scale(15)};
+  margin-bottom: ${scale(3)};
+`;
+
+export const Button = styled.button`
+  padding: ${scale(1)} ${scale(3)};
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+  font-size: 90%;
+`;
