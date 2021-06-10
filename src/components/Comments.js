@@ -119,7 +119,7 @@ const Comments = ({ comments, postId, getComments, user, signIn, signOut }) => {
       ) : (
         <SignIn signIn={signIn} />
       )}
-      {comments.length > 0 ? (
+      {comments?.length > 0 ? (
         comments.map((comment, index) => (
           <Comment key={index} comment={comment} />
         ))
