@@ -2,6 +2,7 @@ import React from "react";
 import styled, { ThemeProvider, css } from "styled-components";
 import { Link as UnstyledLink } from "gatsby";
 import theme from "../theme";
+import Seo from "./Seo";
 
 const GRID_SIZE = 8;
 export const MOBILE_BREAKPOINT = "480px";
@@ -77,13 +78,16 @@ const MaxWidthColumn = styled(CenteredColumn)`
 `;
 
 export const Page = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <Main>
-      <CenteredColumn>
-        <MaxWidthColumn>{children}</MaxWidthColumn>
-      </CenteredColumn>
-    </Main>
-  </ThemeProvider>
+  <>
+    <Seo />
+    <ThemeProvider theme={theme}>
+      <Main>
+        <CenteredColumn>
+          <MaxWidthColumn>{children}</MaxWidthColumn>
+        </CenteredColumn>
+      </Main>
+    </ThemeProvider>
+  </>
 );
 
 export const ResponsiveGrid = styled.div`
