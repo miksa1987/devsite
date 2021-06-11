@@ -1,3 +1,9 @@
+export const seo = {
+  title: `Mika's corner`,
+  description: `Mika's personal corner in the interwebs.`,
+  url: "https://miksa1987.netlify.app",
+};
+
 export const texts = {
   common: {
     backToHome: "Back to home",
