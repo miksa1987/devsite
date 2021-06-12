@@ -1,3 +1,6 @@
+export const commentsEnabled = true;
+// export const commentsEnabled = false;
+
 export const seo = {
   title: `Mika's corner`,
   description: `Mika's personal corner in the interwebs.`,
