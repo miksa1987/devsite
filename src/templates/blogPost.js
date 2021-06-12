@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Navigation from "../components/Navigation";
-import { texts } from "../config";
+import { texts, commentsEnabled } from "../config";
 
 import { Page, Title, TextLink } from "../components/general";
 import Comments from "../components/Comments";
@@ -38,8 +38,10 @@ const BlogPostPage = ({ data }) => {
   };
 
   React.useEffect(() => {
-    getComments();
-    setAuthObserver(setUser);
+    if (commentsEnabled) {
+      getComments();
+      setAuthObserver(setUser);
+    }
   }, []);
 
   return (
@@ -48,14 +50,16 @@ const BlogPostPage = ({ data }) => {
       <TextLink to="/">{texts.common.backToHome}</TextLink>
       <Title>{title}</Title>
       {parseContent(content, assets)}
-      <Comments
-        postId={data.contentfulBlogPost.contentful_id}
-        comments={comments}
-        getComments={getComments}
-        user={user}
-        signIn={signIn}
-        signOut={signOut}
-      />
+      {commentsEnabled && (
+        <Comments
+          postId={data.contentfulBlogPost.contentful_id}
+          comments={comments}
+          getComments={getComments}
+          user={user}
+          signIn={signIn}
+          signOut={signOut}
+        />
+      )}
     </Page>
   );
 };

@@ -49,6 +49,10 @@ in here:
 
 `Run 'gatsby develop' `
 
+#### 6. Optional: Firebase setup
+
+Set up a Firebase project with Authentication and Firestore. Then copy over your configuration variables to your env. See .env.example for reference. On src/config.js, set commentsEnabled to true. I highly recommend to use different Firebase projects for local testing and production.
+
 ## Contributing
 
 Feel free to submit an issue or pull request!
