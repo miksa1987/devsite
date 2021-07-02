@@ -1,5 +1,9 @@
 import React from "react";
-import styled, { ThemeProvider, css } from "styled-components";
+import styled, {
+  ThemeProvider,
+  css,
+  createGlobalStyle,
+} from "styled-components";
 import { Link as UnstyledLink } from "gatsby";
 import theme from "../theme";
 import Seo from "./Seo";
@@ -8,6 +12,12 @@ const GRID_SIZE = 8;
 export const MOBILE_BREAKPOINT = "480px";
 
 export const scale = (factor) => `${factor * GRID_SIZE}px`;
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: ${theme.background};
+  }
+`;
 
 export const Main = styled.main`
   font-size: ${scale(2.5)};
@@ -79,6 +89,7 @@ const MaxWidthColumn = styled(CenteredColumn)`
 
 export const Page = ({ children }) => (
   <>
+    <GlobalStyle />
     <Seo />
     <ThemeProvider theme={theme}>
       <Main>
