@@ -29,9 +29,13 @@ const BlogPage = ({ data }) => {
         ))}
       </TagsContainer>
       <SubTitle>{texts.blog.latest}</SubTitle>
-      {shownPosts.map((post, index) => (
-        <Post key={index} post={post} />
-      ))}
+      {shownPosts
+        .sort((a, b) =>
+          new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1
+        )
+        .map((post, index) => (
+          <Post key={index} post={post} />
+        ))}
     </Page>
   );
 };
