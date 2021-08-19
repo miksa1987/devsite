@@ -48,6 +48,12 @@ export const FullWidth = styled.div`
   justify-content: flex-start;
 `;
 
+export const CodeFullWidth = styled(FullWidth)`
+  background: ${theme.codeBackground};
+  color: ${theme.codeText};
+  padding: ${scale(1)};
+`;
+
 export const AvatarImage = ({ src, alt, marginTop }) => (
   <Image
     src={src}
@@ -169,7 +175,9 @@ export const Body = styled.p`
   font-style: ${(props) => (props.italic ? "italic" : "normal")};
   text-decoration: ${(props) => (props.underline ? "underline" : "none")};
 `;
-export const Code = styled.code``;
+export const Code = styled.code`
+  margin: ${scale(-0.5)} 0;
+`;
 
 export const DottedContainer = styled.div`
   width: 100%;
