@@ -16,11 +16,12 @@ const TagLink = styled(UnstyledLink)`
   text-decoration: none;
   padding: ${scale(0.5)} ${scale(2)};
   margin: ${scale(1)};
+  font-size: 90%;
   border: 1px solid black;
 `;
 
 export const Tag = ({ tag }) => (
-  <TagLink to={`/blog/tag/${tag.toLowerCase()}`}>{tag}</TagLink>
+  <TagLink to={`/blog/tag/${tag.toLowerCase()}`}>{tag.toUpperCase()}</TagLink>
 );
 
 export const TagsContainer = styled.div`
