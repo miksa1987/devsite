@@ -6,7 +6,6 @@ const Navigation = () => (
   <ResponsiveGrid>
     <Link to={navigationLinks.about.path}>{navigationLinks.about.title}</Link>
     <Link to={navigationLinks.work.path}>{navigationLinks.work.title}</Link>
-    <Link to={navigationLinks.blog.path}>{navigationLinks.blog.title}</Link>
   </ResponsiveGrid>
 );
 

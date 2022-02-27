@@ -6,6 +6,7 @@ import styled, {
 } from "styled-components";
 import { Link as UnstyledLink } from "gatsby";
 import theme from "../theme";
+import Navigation from './Navigation'
 import Seo from "./Seo";
 
 const GRID_SIZE = 8;
@@ -16,6 +17,17 @@ export const scale = (factor) => `${factor * GRID_SIZE}px`;
 const GlobalStyle = createGlobalStyle`
   body {
     background: ${theme.background};
+    color: ${theme.text};
+    width: calc(100vw-12px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    color: ${theme.link};
   }
 `;
 
@@ -24,7 +36,6 @@ export const Main = styled.main`
   font-family: -apple-system, Roboto, sans-serif, serif;
   padding-top: ${scale(12)};
   padding-bottom: ${scale(12)};
-  min-width: calc(100vw - 12px);
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
@@ -99,6 +110,7 @@ export const Page = ({ children }) => (
     <Seo />
     <ThemeProvider theme={theme}>
       <Main>
+        <Navigation />
         <CenteredColumn>
           <MaxWidthColumn>{children}</MaxWidthColumn>
         </CenteredColumn>
@@ -110,12 +122,12 @@ export const Page = ({ children }) => (
 export const ResponsiveGrid = styled.div`
   max-width: ${scale(100)};
   width: 100%;
-  display: grid;
-  grid-template: ${scale(5)} / 33% 33% 33%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin-bottom: ${scale(5)};
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    display: flex;
     flex-direction: column;
   }
 `;
@@ -132,15 +144,17 @@ export const ResponsiveRow = styled.div`
 
 export const Link = styled(UnstyledLink)`
   background: ${(props) => props.theme.primary};
-  padding: ${scale(3)};
+  color: ${theme.background};
+  padding: ${scale(2)} ${scale(4)};
   margin: ${scale(2)};
+  max-height: ${scale(3)};
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${(props) => props.theme.textSecondary};
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
+  border-radius: ${scale(1)};
 
   &:hover {
     text-decoration: underline;

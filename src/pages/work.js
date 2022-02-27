@@ -61,7 +61,6 @@ const WorkPage = ({ data }) => {
 
   return (
     <Page>
-      <Navigation />
       <TextLink to="/">{texts.common.backToHome}</TextLink>
       <Title>{texts.work.title}</Title>
       {projects?.length > 0 &&

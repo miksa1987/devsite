@@ -19,7 +19,6 @@ const BlogPage = ({ data }) => {
 
   return (
     <Page>
-      <Navigation />
       <TextLink to="/">{texts.common.backToHome}</TextLink>
       <Title>{texts.blog.title}</Title>
       <SubSubTitle>{texts.blog.searchDescription}</SubSubTitle>

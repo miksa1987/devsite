@@ -18,7 +18,6 @@ const AboutPage = ({ data }) => {
 
   return (
     <Page>
-      <Navigation />
       <TextLink to="/">{texts.common.backToHome}</TextLink>
       <Title>{texts.about.title}</Title>
       {parseContent(content, assets)}

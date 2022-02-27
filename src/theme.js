@@ -1,9 +1,9 @@
 const theme = {
-  background: "#FFFFFF",
-  text: "#000000",
-  textSecondary: "#FFFFFF",
-  primary: "#000000",
-  link: "#053AFB",
+  background: "#1e1e2e",
+  text: "#d9e9ee",
+  textSecondary: "#f5e0dc",
+  primary: "#d9e9ee",
+  link: "#e8a2af",
   codeBackground: "#3c3836",
   codeText: "#ebdbb2",
 };

@@ -33,7 +33,6 @@ const IndexPage = ({ data }) => {
 
   return (
     <Page>
-      <Navigation />
       <AvatarImage src={avatar} alt="Avatar" marginTop={scale(12)} />
       <Title>
         {texts.index.hi} {displayName} {texts.index.hiEmoji}

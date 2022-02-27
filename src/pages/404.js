@@ -8,7 +8,6 @@ import { Page, Title, Body } from "../components/general";
 const NotFoundPage = () => {
   return (
     <Page>
-      <Navigation />
       <Link to="/">{texts.common.backToHome}</Link>
       <Title>{texts.notFound.title}</Title>
       <Title>{texts.notFound.emoji}</Title>
