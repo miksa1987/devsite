@@ -16,8 +16,8 @@ export const scale = (factor) => `${factor * GRID_SIZE}px`;
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: ${theme.background};
-    color: ${theme.text};
+    background: ${props => props.theme.background};
+    color: ${props => props.theme.text};
     width: calc(100vw-12px);
     box-sizing: border-box;
     display: flex;
@@ -60,8 +60,8 @@ export const FullWidth = styled.div`
 `;
 
 export const CodeFullWidth = styled(FullWidth)`
-  background: ${theme.codeBackground};
-  color: ${theme.codeText};
+  background: ${props => props.theme.codeBackground};
+  color: ${props => props.theme.codeText};
   padding: ${scale(1)};
 `;
 
@@ -106,9 +106,9 @@ const MaxWidthColumn = styled(CenteredColumn)`
 
 export const Page = ({ children }) => (
   <>
-    <GlobalStyle />
     <Seo />
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Main>
         <Navigation />
         <CenteredColumn>
@@ -143,8 +143,9 @@ export const ResponsiveRow = styled.div`
 `;
 
 export const Link = styled(UnstyledLink)`
-  background: ${(props) => props.theme.primary};
-  color: ${theme.background};
+  background: ${(props) => props.theme.link};
+  width: ${scale(15)};
+  color: ${props => props.theme.background};
   padding: ${scale(2)} ${scale(4)};
   margin: ${scale(2)};
   max-height: ${scale(3)};

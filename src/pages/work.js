@@ -28,10 +28,8 @@ const ProjectCardContainer = styled.div`
   padding: ${scale(1)};
   margin: ${scale(2)};
 
-  &:last-child {
-    border-bottom: 1px dotted black;
-    padding-bottom: ${scale(5)};
-  }
+  border-bottom: 1px dotted ${props => props.theme.primary};
+  padding-bottom: ${scale(5)};
 `;
 
 const ProjectCard = ({ project }) => (

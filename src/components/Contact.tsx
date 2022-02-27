@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import { FaGithub, FaTwitter, FaFacebook, FaInstagram, FaEnvelope, FaLinkedin } from 'react-icons/fa'
 import theme from '../theme'
 
@@ -19,6 +19,8 @@ const Container = styled(Row)`
 
 
 const Contact = ({ linkedIn, twitter, github, email, facebook, instagram }) => {
+  const theme = useTheme()
+
   return (
     <Container>
       {email && <a target="_blank"href={`mailto:${email}`} rel="noreferrer"><FaEnvelope color={theme.link} size={ICON_SIZE}/></a>}
