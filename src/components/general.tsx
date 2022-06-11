@@ -34,11 +34,14 @@ const GlobalStyle = createGlobalStyle`
 export const Main = styled.main`
   font-size: ${scale(2.5)};
   font-family: -apple-system, Roboto, sans-serif, serif;
-  padding-top: ${scale(6)};
-  padding-bottom: ${scale(6)};
+  padding-top: ${scale(2)};
+  padding-bottom: ${scale(2)};
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding-left: ${scale(2)};
+  padding-right: ${scale(2)};
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding-top: 0;
@@ -78,7 +81,7 @@ export const AvatarImage: React.FC<AvatarImageProps> = ({ src, alt, marginTop })
     alt={alt}
     width={scale(20)}
     height={scale(20)}
-    marginTop={marginTop ?? scale(5)}
+    marginTop={marginTop ?? scale(2)}
   />
 )
 
@@ -133,7 +136,6 @@ export const ResponsiveGrid = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: ${scale(5)};
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;

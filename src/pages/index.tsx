@@ -37,7 +37,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
   return (
     <Page>
-      <AvatarImage src={avatar} alt="Avatar" marginTop={scale(12)} />
+      <AvatarImage src={avatar} alt="Avatar" marginTop={scale(6)} />
       <Title>
         {texts.index.hi} {displayName} {texts.index.hiEmoji}
       </Title>
