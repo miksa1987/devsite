@@ -1,20 +1,23 @@
-import * as React from "react";
-import { graphql } from "gatsby";
-import Navigation from "../components/Navigation";
-import { texts } from "../config";
-import { parseContent } from "../util/parser";
+import * as React from 'react'
+import { graphql } from 'gatsby'
+import { texts } from '../config'
+import { parseContent } from '../util/parser'
+import { AboutData, LongBio } from '../domain/about'
 
-import { Page, Title, TextLink } from "../components/general";
+import { Page, Title, TextLink } from '../components/general'
 
-const AboutPage = ({ data }) => {
-  const { displayName, longBio } = data.contentfulPerson;
+type Props = {
+  data: AboutData
+}
+const AboutPage: React.FC<Props> = ({ data }) => {
+  const { longBio } = data.contentfulPerson
 
-  const { content } = JSON.parse(longBio.raw);
+  const { content } = JSON.parse(longBio.raw) as LongBio
   const assets = data.allContentfulAsset.edges.map((edge) => ({
     id: edge.node.contentful_id,
     src: edge.node.file.url,
     alt: edge.node.title,
-  }));
+  }))
 
   return (
     <Page>
@@ -22,10 +25,10 @@ const AboutPage = ({ data }) => {
       <Title>{texts.about.title}</Title>
       {parseContent(content, assets)}
     </Page>
-  );
-};
+  )
+}
 
-export default AboutPage;
+export default AboutPage
 
 export const query = graphql`
   query AboutQuery {
@@ -47,4 +50,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`
