@@ -1,8 +1,8 @@
-import * as React from "react";
-import { graphql } from "gatsby";
-import Navigation from "../components/Navigation";
-import Contact from "../components/Contact";
-import { texts } from "../config";
+import * as React from 'react'
+import { graphql } from 'gatsby'
+import Contact from '../components/Contact'
+import { texts } from '../config'
+import { IndexData } from '../domain/index'
 
 import {
   Page,
@@ -12,9 +12,13 @@ import {
   Title,
   Body,
   scale,
-} from "../components/general";
+} from '../components/general'
 
-const IndexPage = ({ data }) => {
+type Props = {
+  data: IndexData
+}
+
+const IndexPage: React.FC<Props> = ({ data }) => {
   const {
     displayName,
     descriptionTitle,
@@ -27,13 +31,12 @@ const IndexPage = ({ data }) => {
     avatar: {
       file: { url: avatar },
     },
-  } = data.contentfulPerson;
+  } = data.contentfulPerson
 
-  const contactData = { email, github, twitter, linkedIn, facebook };
+  const contactData = { email, github, twitter, linkedIn, facebook }
 
   return (
     <Page>
-      <Navigation />
       <AvatarImage src={avatar} alt="Avatar" marginTop={scale(12)} />
       <Title>
         {texts.index.hi} {displayName} {texts.index.hiEmoji}
@@ -49,10 +52,10 @@ const IndexPage = ({ data }) => {
       </List>
       <Contact {...contactData} />
     </Page>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage
 
 export const query = graphql`
   query IndexQuery {
@@ -72,4 +75,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

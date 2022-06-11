@@ -1,6 +1,6 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { seo } from "../config";
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { seo } from '../config'
 
 const Seo = () => {
   return (
@@ -11,7 +11,7 @@ const Seo = () => {
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
     </Helmet>
-  );
-};
+  )
+}
 
-export default Seo;
+export default Seo
