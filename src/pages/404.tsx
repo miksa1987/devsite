@@ -5,14 +5,13 @@ import { texts } from '../config'
 import { Page, Title, Body } from '../components/general'
 
 const NotFoundPage: React.FC = () => {
-    return (
-        <Page>
-            <Link to="/">{texts.common.backToHome}</Link>
-            <Title>{texts.notFound.title}</Title>
-            <Title>{texts.notFound.emoji}</Title>
-            <Body>{texts.notFound.description}</Body>
-        </Page>
-    )
+  return (
+    <Page>
+      <Title>{texts.notFound.title}</Title>
+      <Title>{texts.notFound.emoji}</Title>
+      <Body>{texts.notFound.description}</Body>
+    </Page>
+  )
 }
 
 export default NotFoundPage
