@@ -175,10 +175,10 @@ export const Link = styled(UnstyledLink)`
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: calc(100% - ${scale(10)});
-    margin: ${scale(1)};
+    margin: ${scale(0.5)};
 
     &:last-of-type {
-      margin-bottom: ${scale(3)};
+      margin-bottom: ${scale(2)};
     }
   }
 `
