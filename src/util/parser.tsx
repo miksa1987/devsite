@@ -11,7 +11,6 @@ import {
 import { ContentBlock, AssetNode } from '../domain/general'
 
 const renderText = (chunk: ContentBlock) => {
-  console.log(chunk)
   const textContent = chunk.value
   const styles = chunk.marks.map((mark) => mark.type)
 
