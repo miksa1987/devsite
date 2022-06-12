@@ -5,7 +5,7 @@ import { navigationLinks } from '../config'
 
 const NavigationContainer = styled.div`
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   border-bottom: 1px dotted ${props => props.theme.primary};
 `
 

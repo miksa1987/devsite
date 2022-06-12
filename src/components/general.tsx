@@ -135,11 +135,9 @@ export const Page: React.FC = ({ children }) => (
 )
 
 export const ResponsiveGrid = styled.div`
-  max-width: ${scale(100)};
-  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
