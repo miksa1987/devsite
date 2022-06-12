@@ -24,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    & > * {
+      width: 100%;
+    }
   }
 
   a {
@@ -34,7 +38,6 @@ const GlobalStyle = createGlobalStyle`
 export const Main = styled.main`
   font-size: ${scale(2.5)};
   font-family: -apple-system, Roboto, sans-serif, serif;
-  padding-top: ${scale(2)};
   padding-bottom: ${scale(2)};
   box-sizing: border-box;
   justify-content: center;
@@ -42,6 +45,7 @@ export const Main = styled.main`
   text-align: center;
   padding-left: ${scale(2)};
   padding-right: ${scale(2)};
+  width: 100%;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding-top: 0;
@@ -135,10 +139,12 @@ export const ResponsiveGrid = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `
 
@@ -158,6 +164,7 @@ export const Link = styled(UnstyledLink)`
   color: ${props => props.theme.background};
   padding: ${scale(1.5)} ${scale(3)};
   margin: ${scale(2)};
+  margin-top: ${scale(1)};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,6 +178,10 @@ export const Link = styled(UnstyledLink)`
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: calc(100% - ${scale(10)});
     margin: ${scale(1)};
+
+    &:last-of-type {
+      margin-bottom: ${scale(3)};
+    }
   }
 `
 

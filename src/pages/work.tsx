@@ -12,7 +12,6 @@ import {
   ResponsiveRow,
   Row,
   scale,
-  TextLink,
 } from '../components/general'
 
 const SpaceBetweenResponsiveRow = styled(ResponsiveRow)`
@@ -22,14 +21,16 @@ const SpaceBetweenResponsiveRow = styled(ResponsiveRow)`
 const ProjectCardContainer = styled.div`
   display: flex;
   width: 95%;
-  border-top: 1px dotted black;
+  border-top: 1px dotted ${props => props.theme.primary};
   display: flex;
   flex-direction: column;
   padding: ${scale(1)};
   margin: ${scale(2)};
 
-  border-bottom: 1px dotted ${props => props.theme.primary};
-  padding-bottom: ${scale(5)};
+  &:last-of-type {
+    border-bottom: 1px dotted ${props => props.theme.primary};
+    padding-bottom: ${scale(5)};
+  }
 `
 
 type ProjectCardProps = {
@@ -66,7 +67,6 @@ const WorkPage: React.FC<Props> = ({ data }) => {
 
   return (
     <Page>
-      <TextLink to="/">{texts.common.backToHome}</TextLink>
       <Title>{texts.work.title}</Title>
       {projects?.length > 0 &&
         projects.map((project, index) => (

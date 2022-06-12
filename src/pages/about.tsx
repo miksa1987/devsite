@@ -21,7 +21,6 @@ const AboutPage: React.FC<Props> = ({ data }) => {
 
   return (
     <Page>
-      <TextLink to="/">{texts.common.backToHome}</TextLink>
       <Title>{texts.about.title}</Title>
       {parseContent(content, assets)}
     </Page>
