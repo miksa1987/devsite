@@ -4,13 +4,16 @@ import { texts } from '../config'
 import { parseContent } from '../util/parser'
 import { AboutData, LongBio } from '../domain/about'
 
-import { Page, Title, TextLink } from '../components/general'
+import { Page, Title } from '../components/general'
+import Contact from '../components/Contact'
 
 type Props = {
   data: AboutData
 }
 const AboutPage: React.FC<Props> = ({ data }) => {
-  const { longBio } = data.contentfulPerson
+  const { longBio, email, github, twitter, linkedIn, facebook } = data.contentfulPerson
+
+  const contactData = { email, github, twitter, linkedIn, facebook }
 
   const { content } = JSON.parse(longBio.raw) as LongBio
   const assets = data.allContentfulAsset.edges.map((edge) => ({
@@ -23,6 +26,7 @@ const AboutPage: React.FC<Props> = ({ data }) => {
     <Page>
       <Title>{texts.about.title}</Title>
       {parseContent(content, assets)}
+      <Contact {...contactData} />
     </Page>
   )
 }
@@ -36,6 +40,11 @@ export const query = graphql`
       longBio {
         raw
       }
+      linkedIn
+      facebook
+      email
+      twitter
+      github
     }
     allContentfulAsset {
       edges {

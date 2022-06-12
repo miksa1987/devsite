@@ -16,6 +16,12 @@ export type AboutData = {
     longBio: {
       raw: string
     }
+    email?: string
+    github?: string
+    twitter?: string
+    linkedIn?: string
+    facebook?: string
+
   }
   allContentfulAsset: {
     edges: AssetNode[]
