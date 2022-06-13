@@ -119,6 +119,20 @@ const MaxWidthColumn = styled(CenteredColumn)`
   max-width: ${scale(100)};
 `
 
+export const Body = styled.p<{ compact?: boolean; underline?: boolean; italic?: boolean; bold?: boolean }>`
+  ${(props) => props.compact && textStyle}
+  font-weight: ${(props) => (props.bold ? 'bold' : 'normal')};
+  font-style: ${(props) => (props.italic ? 'italic' : 'normal')};
+  text-decoration: ${(props) => (props.underline ? 'underline' : 'none')};
+`
+
+const CopyrightText = styled(Body)`
+  position: relative;
+  bottom: 0;
+  right: 0;
+  margin-top: ${scale(8)};
+`
+
 export const Page: React.FC = ({ children }) => (
   <>
     <Seo />
@@ -129,6 +143,9 @@ export const Page: React.FC = ({ children }) => (
         <CenteredColumn>
           <MaxWidthColumn>{children}</MaxWidthColumn>
         </CenteredColumn>
+        <CopyrightText compact>
+          © Mika Laaksonen {new Date().getFullYear()}
+        </CopyrightText>
       </Main>
     </ThemeProvider>
   </>
@@ -200,12 +217,6 @@ export const SubTitle = styled.h3.attrs({ as: 'h2' })<{compact?: boolean}>`
 `
 export const SubSubTitle = styled.h5.attrs({ as: 'h3' })<{ compact?: boolean}>`
   ${(props) => props.compact && textStyle}
-`
-export const Body = styled.p<{ compact?: boolean; underline?: boolean; italic?: boolean; bold?: boolean }>`
-  ${(props) => props.compact && textStyle}
-  font-weight: ${(props) => (props.bold ? 'bold' : 'normal')};
-  font-style: ${(props) => (props.italic ? 'italic' : 'normal')};
-  text-decoration: ${(props) => (props.underline ? 'underline' : 'none')};
 `
 export const Code = styled.code`
   margin: ${scale(-0.5)} 0;
