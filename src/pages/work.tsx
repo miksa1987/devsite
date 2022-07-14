@@ -16,19 +16,26 @@ import {
 
 const SpaceBetweenResponsiveRow = styled(ResponsiveRow)`
   justify-content: space-between;
+  align-items: center;
+`
+
+const LinksRow = styled(Row)`
+  & > * {
+    margin-right: ${scale(1)};
+    text-decoration: none;
+  }
 `
 
 const ProjectCardContainer = styled.div`
   display: flex;
   width: 95%;
-  border-top: 1px dotted ${props => props.theme.primary};
+  border-bottom: 1px dotted ${props => props.theme.primary};
   display: flex;
   flex-direction: column;
   padding: ${scale(1)};
   margin: ${scale(2)};
 
   &:last-of-type {
-    border-bottom: 1px dotted ${props => props.theme.primary};
     padding-bottom: ${scale(5)};
   }
 `
@@ -41,12 +48,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
   <ProjectCardContainer>
     <SpaceBetweenResponsiveRow>
       <SubTitle compact>{project.title}</SubTitle>
-      <Row>
+      <LinksRow>
         {project.sourceUrl && (
           <Link to={project.sourceUrl}>{texts.work.sourceUrl}</Link>
         )}
         {project.url && <Link to={project.url}>{texts.work.projectUrl}</Link>}
-      </Row>
+      </LinksRow>
     </SpaceBetweenResponsiveRow>
     <Body compact>{project.description}</Body>
     {project.role && <Body compact>Role: {project.role}</Body>}
@@ -61,7 +68,7 @@ const WorkPage: React.FC<Props> = ({ data }) => {
   const {
     allContentfulProject: { edges },
   } = data
-  const projects = edges.map((edge) => 
+  const projects = edges.map((edge) =>
     edge.node
   )
 
