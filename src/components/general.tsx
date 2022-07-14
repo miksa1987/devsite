@@ -186,6 +186,7 @@ export const Link = styled(UnstyledLink)`
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
+  border-radius: ${scale(4)};
 
   &:hover {
     text-decoration: underline;
