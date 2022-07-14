@@ -9,11 +9,11 @@ export type Theme = {
 }
 
 const theme: Theme = {
-  background: '#fbf1c7',
-  text: '#282828',
-  textSecondary: '#504945',
-  primary: '#cc241d',
-  link: '#d65d0e',
+  background: '#eff1f5',
+  text: '#4c4f69',
+  textSecondary: '#5c5f77',
+  primary: '#d20f39',
+  link: '#d20f39',
   codeBackground: '#f2e5bc',
   codeText: '#282828',
 }
